@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<unistd.h>
+main()
+{
+int prid,prid1,prid2;
+prid=fork();
+if(prid==-1)
+{
+printf("ERROR IN PROCESS CREATION \n");
+return 0;
+}
+if(prid!=0)
+{
+prid1=getpid();
+printf("\n the parent process ID is %d\n", prid1);
+}
+else
+{
+prid2=getpid();
+printf("\n the child process ID is %d\n", prid2);
+}
+}
